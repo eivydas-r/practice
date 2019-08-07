@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 class Person{
 	String name;
@@ -8,22 +8,19 @@ class Person{
 		name = "empty";
 		loggedIn = false;
 	}
+
+	Person(String name, boolean loggedIn){
+		this.name = name;
+		System.out.println("this");
+		this.loggedIn = loggedIn;
+	}
 }
 
 class Main {
 	public static void main(String[] args) {
-		String[] employees = new String[20];
-		employees[0] = "jon";
-		employees[1] = "jim";
-		System.out.println(employees[0]);
+		ArrayList<Person> employees = new ArrayList<Person>();
+		employees.add(new Person ("Joe",true));
 
-		Person employee1 = new Person();
-		System.out.println(employee1.name);
-
-		Person[] employeesSet = new Person[20];
-		for(Person p : employeesSet){
-			p = new Person();
-		}
-		System.out.println(employeesSet[0].name);
+		System.out.println(employees.get(0).name);
 	}
 }
